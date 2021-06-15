@@ -1,0 +1,101 @@
+div.navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 44px;
+    background-color: #333;
+}
+
+div.navbar-list a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+div.navbar-list a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+div.navbar-list a.active {
+    background-color: forestgreen;
+    color: white;
+}  
+
+div#game-section { 
+    
+    display: grid; 
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 30% 30% 30% 30% 30%; 
+} 
+
+.cell {
+    border: 1px solid #c2ba3c;
+    background: #f8ffde;
+  }
+
+
+div#play-button { 
+    width: 40%; 
+    margin: 3% 30%; 
+    height: 3rem; 
+    background-color: salmon;
+} 
+
+div.input-box { 
+    width: 60%; 
+    margin: 3% 20%; 
+    height: 5rem; 
+    background-color: #ddd;
+} 
+
+div.input-box textarea {
+    width: 80%; 
+    height: 60%; 
+    margin: 0 10%; 
+}
+
+div#play-button:hover { 
+    background-color: lightsalmon;
+} 
+
+div#rules { 
+    width: 60%; 
+    margin: 3% 20%; 
+    height: 5rem; 
+    background-color: rgb(204, 162, 154);
+} 
+
+div#highscores { 
+    width: 40%; 
+    margin: 5% 30%; 
+    height: 20rem; 
+    background-color:#ddd;
+} 
+
+div#usergames { 
+    width: 40%; 
+    margin: 5% 30%;
+    height: 20rem;
+    background-color:aqua;
+} 
+
+p { 
+    background-color: #fff; 
+    display: inline-flex;   
+    align-items: center; 
+    justify-content: center;
+    font-size: 40px; 
+    margin: 0%; 
+    height: 50px; 
+    width: 200px; 
+}
+
+div.hidden { 
+    display: none;  
+}

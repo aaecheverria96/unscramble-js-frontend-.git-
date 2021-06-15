@@ -1,0 +1,1 @@
+let countDownEl = document.getElementById("countdown")

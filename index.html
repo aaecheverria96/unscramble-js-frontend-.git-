@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unscramble</title>
+    <link rel="stylesheet" href="stylesheets/index.css">
+</head>
+<body> 
+    <nav class="navbar"> 
+        <div class="navbar-list"> 
+            <a href="#rules" class="navbar-link">Game Rules</a> 
+            <a href="#highscores" class="navbar-link">High Scores</a> 
+            <a href="#usergames" class="navbar-link">User Games</a>  
+        </div> 
+    </nav> 
+    <p id="countdown"></p>
+    <div id="game-section">
+    
+    </div>   
+    <div id="play-button"> 
+            Start Game 
+    </div>
+    <div class="input-box hidden" id="input-box">
+        <button id="submit btn"> 
+            submit
+        </button> 
+        <textarea> 
+            
+        </textarea>
+    </div> 
+    <div id="rules">
+        Welcome to Unscramble! Where you will put your skills to the test! 
+        You get 45 seconds to unscramble and make words out of the random letters that come up on the screen. Each word you create is one point, and your highest scores will be saved. You can check the highest scores by other users in the "Highest Scores". 
+    </div> 
+    <div id="highscores">
+
+    </div> 
+    <div id="usergames"> 
+
+    </div> 
+    
+    <script src="javascripts/global.js"></script> 
+    <script src="javascripts/index.js"></script> 
+    <script src="javascripts/models/game.js"></script>
+    <script src="javascripts/models/user.js"></script> 
+    <script src="javascripts/models/score.js"></script>  
+    <script> 
+        window.addEventListener("load", function(){ 
+            const arrayLetters = [ 
+                ["A", "B", "C", "E"], 
+                ["E", "D", "F", "U"], 
+                ["N", "O", "J", "G"], 
+                ["X", "Y", "U", "A"], 
+                ["W", "S", "V", "Q"],
+            ]; 
+            let container = document.getElementById("game-section"); 
+            for (let i of arrayLetters) {for (let j of i) { 
+                let cell = document.createElement("div"); 
+                cell.innerHTML = j; 
+                cell.className = "cell"; 
+                container.appendChild(cell);
+
+            }}
+        });
+    </script>
+</body> 
+</html>
