@@ -5,9 +5,9 @@ class Game {
         currentGame.displayGame()  
         console.log(document.getElementById("input-box"))
         document.getElementById("input-box").classList.remove("hidden") 
-         
+        
 
-        var timeleft = 10; 
+        var timeleft = 45; 
         countDownEl.innerHTML = `00:${timeleft}`; 
        currentGame.setIntervalX(currentGame.updateCountdown, 1000, timeleft);
         //timer should start one second after game starts and end at 0 seconds or submit 
@@ -51,12 +51,13 @@ class Game {
 
 
     displayGame() { 
-        
-
-        // document.getElementById("gameboard").innerText = arrayLetters.forEach(i => { 
-        //     let div = document.createElement("div") 
-        //     let p = document.createElement("p") 
-        //     div.append(`${i}`,p)
+        // const arrayLetters =[ [A, B, C, E], [E, D, F, U], [N, O, J, G], [X, Y, U, A], [W, S, V, Q],];   
+       
+        // document.getElementById("game-section").innerText = arrayLetters.forEach(i => { 
+        // let div = document.createElement("div")
+        // let p = document.createElement("p")
+        // div.append(`${i}`,p)
+        // }); 
 
         // }); 
         // for each letter build the tag that i need to append on the page and then append it (span or paragraph tags) 
@@ -67,6 +68,8 @@ class Game {
 
     gameOver() {  
         document.getElementById("input-box").classList.add("hidden") 
+        
+
     //    let userInput = document.getElementById('input-box').value 
        
         document.getElementById('submit btn').addEventListener("click")
@@ -74,8 +77,10 @@ class Game {
 
     }  
 
-    validWord() { 
-
+    validateWord() { 
+//         fetch('http://example.com/movies.json')
+//   .then(response => response.json())
+//   .then(data => console.log(data));
     }
 
 } 

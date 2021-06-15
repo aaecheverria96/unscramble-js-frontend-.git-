@@ -37,7 +37,14 @@ div#game-section {
 .cell {
     border: 1px solid #c2ba3c;
     background: #f8ffde;
-  }
+}
+
+/* div#game-section { 
+    width: 50%; 
+    margin: 5% 30%; 
+    height: 20rem; 
+    background-color:#ddd;
+}  */
 
 
 div#play-button { 
