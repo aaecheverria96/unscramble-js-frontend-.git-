@@ -68,22 +68,19 @@ class Game {
 
     gameOver() {  
         document.getElementById("input-box").classList.add("hidden") 
-        
+        document.getElementById('submit btn').addEventListener("click") 
 
-    //    let userInput = document.getElementById('input-box').value 
-       
-        document.getElementById('submit btn').addEventListener("click")
+        let userInput = document.getElementById('input-box').value  
+        // fetch('https://example.com', {
+        //     credentials: 'include'
+        // });
 
 
     }  
 
-    validateWord() { 
-//         fetch('http://example.com/movies.json')
-//   .then(response => response.json())
-//   .then(data => console.log(data));
-    }
+   
 
-} 
+}  
 
 
 
