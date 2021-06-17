@@ -68,15 +68,26 @@ class Game {
 
     gameOver() {  
         document.getElementById("input-box").classList.add("hidden") 
-        document.getElementById('submit btn').addEventListener("click") 
+         
 
-        let userInput = document.getElementById('input-box').value  
+        // let userInput = document.getElementById('input-box').value  
         // fetch('https://example.com', {
         //     credentials: 'include'
         // });
 
 
     }  
+
+    displayHighScores() { 
+        const scoreUrl = 'http://localhost:3000/scores/highscores'; 
+        
+        fetch(scoreUrl) 
+            .then(response => response.text()) 
+            .then(html => { 
+                document.getElementById("highscores").innerHTML = html;
+            })
+       
+    } 
 
    
 
