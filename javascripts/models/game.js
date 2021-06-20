@@ -74,8 +74,13 @@ class Game {
         // fetch('https://example.com', {
         //     credentials: 'include'
         // });
-
-
+        const handleClick = (e) => {
+            // const answer = input().value  
+           Game.gameOver()
+        }
+        document.getElementById("submit btn").addEventListener("click", function () { 
+            Game.gameOver();
+        }); 
     }  
 
     displayHighScores() { 

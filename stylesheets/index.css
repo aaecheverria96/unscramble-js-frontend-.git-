@@ -46,6 +46,20 @@ div#game-section {
     background-color:#ddd;
 }  */
 
+div#username-input { 
+    width: 60%; 
+    margin: 3% 20%; 
+    height: 5rem; 
+    background-color: #ddd;
+} 
+
+div.input-boxusername textarea { 
+    width: 70%; 
+    height: 30%; 
+    margin: 0 5%; 
+}
+
+
 
 div#play-button { 
     width: 40%; 
@@ -88,8 +102,8 @@ div#highscores {
 div#usergames { 
     width: 40%; 
     margin: 5% 30%;
-    height: 20rem;
-    background-color:aqua;
+    height: 10rem;
+    background-color:#ddd;
 } 
 
 p { 
