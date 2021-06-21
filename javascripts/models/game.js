@@ -7,7 +7,7 @@ class Game {
         document.getElementById("input-box").classList.remove("hidden") 
         
 
-        var timeleft = 45; 
+        var timeleft = 10; 
         countDownEl.innerHTML = `00:${timeleft}`; 
        currentGame.setIntervalX(currentGame.updateCountdown, 1000, timeleft);
         //timer should start one second after game starts and end at 0 seconds or submit 
@@ -51,13 +51,22 @@ class Game {
 
 
     displayGame() { 
-        // const arrayLetters =[ [A, B, C, E], [E, D, F, U], [N, O, J, G], [X, Y, U, A], [W, S, V, Q],];   
-       
-        // document.getElementById("game-section").innerText = arrayLetters.forEach(i => { 
-        // let div = document.createElement("div")
-        // let p = document.createElement("p")
-        // div.append(`${i}`,p)
-        // }); 
+            const arrayLetters = [ 
+                ["A", "B", "C", "E"], 
+                ["E", "D", "F", "U"], 
+                ["N", "O", "J", "G"], 
+                ["X", "Y", "U", "A"], 
+                ["W", "S", "V", "Q"],
+            ]; 
+            let container = document.getElementById("game-section"); 
+            for (let i of arrayLetters) {
+                for (let j of i) { 
+                    let cell = document.createElement("div"); 
+                    cell.innerHTML = j; 
+                    cell.className = "cell"; 
+                    container.appendChild(cell);
+                }
+            }
 
         // }); 
         // for each letter build the tag that i need to append on the page and then append it (span or paragraph tags) 
@@ -66,21 +75,33 @@ class Game {
         //input field should appear to type answer 
     } 
 
-    gameOver() {  
-        document.getElementById("input-box").classList.add("hidden") 
+   static gameOver() {  
+    //    let input =  document.getElementById("input-box").value  
+    //    let scoreObj = new Score(input)
+        document.getElementById("input-box").classList.add("hidden")  
+        let container = document.getElementById("game-section"); 
+        container.innerText = ""
          
 
         // let userInput = document.getElementById('input-box').value  
         // fetch('https://example.com', {
         //     credentials: 'include'
         // });
-        const handleClick = (e) => {
-            // const answer = input().value  
-           Game.gameOver()
-        }
-        document.getElementById("submit btn").addEventListener("click", function () { 
-            Game.gameOver();
-        }); 
+        
+        // document.getElementById("submit btn").addEventListener("click", function () { 
+        //     Game.gameOver();
+        // }); 
+
+        //BEfore the fetch to the backend we need:
+        //1. The username of the user
+        //2. we need to find the Game object
+        //3. We need to get the score points
+
+        // IN THE BACKEND
+        // 1. send the info to /users
+        //2. First: find or create the user by the username received from the fetch call
+        //3. create the user's game: game = user.games.create(answer: "whatevervaluewaspassedfromfetch")
+        //4. create a new score object Score.create(total: , game_id: game.id)
     }  
 
     displayHighScores() { 

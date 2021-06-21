@@ -53,24 +53,5 @@
     <script src="javascripts/models/game.js"></script>
     <script src="javascripts/models/user.js"></script> 
     <script src="javascripts/models/score.js"></script>  
-    <script> 
-        window.addEventListener("load", function(){ 
-            const arrayLetters = [ 
-                ["A", "B", "C", "E"], 
-                ["E", "D", "F", "U"], 
-                ["N", "O", "J", "G"], 
-                ["X", "Y", "U", "A"], 
-                ["W", "S", "V", "Q"],
-            ]; 
-            let container = document.getElementById("game-section"); 
-            for (let i of arrayLetters) {for (let j of i) { 
-                let cell = document.createElement("div"); 
-                cell.innerHTML = j; 
-                cell.className = "cell"; 
-                container.appendChild(cell);
-
-            }}
-        });
-    </script
 </body> 
 </html>
