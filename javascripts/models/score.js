@@ -8,13 +8,11 @@ class Score {
     }
 
     calculateFromAnswer(word) {
-        if (word.length ===4 ) {
-            return 4
-        } else if (word.length === 5) {
-            return 10
-        } else {
-
+        if (word.length >= 4 ) {
+            return 2
+        } else { 
+            return 1 
         }
     }
 
-}
+}   

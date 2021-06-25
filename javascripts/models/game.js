@@ -1,5 +1,5 @@
 class Game { 
-    static startGame() {
+    static startGame() { 
         console.log("STARTING GAME");
         let currentGame = new Game; 
         currentGame.displayGame()  
@@ -22,7 +22,7 @@ class Game {
             callback() 
             if (++x === repetitions) { 
                 clearInterval(intervalID); 
-                game.gameOver(); 
+                Game.gameOver(); 
 
             // invoke a gameOverfunction (defined in game class Game.gameOver). Step 1) Save the input value then remove input from the page 
             // step2) validate input/answer use fetch call to API called "words api" 20500 requests per day 
@@ -67,35 +67,29 @@ class Game {
                     container.appendChild(cell);
                 }
             }
-
-        // }); 
-        // for each letter build the tag that i need to append on the page and then append it (span or paragraph tags) 
-        // 9 or 16 within the tiles. append it to the page (scrabl) https://cssgridgarden.com/ scrabble style 
-        //use grid for styling to add x tiles to each row 
-        //input field should appear to type answer 
-    } 
+        }
 
    static gameOver() {  
-    //    let input =  document.getElementById("input-box").value  
-    //    let scoreObj = new Score(input)
+       let input =  document.getElementById("input-box").value  
+       let scoreObj = new Score(input)
         document.getElementById("input-box").classList.add("hidden")  
         let container = document.getElementById("game-section"); 
         container.innerText = ""
-         
-
+          
+        
         // let userInput = document.getElementById('input-box').value  
         // fetch('https://example.com', {
         //     credentials: 'include'
         // });
         
-        // document.getElementById("submit btn").addEventListener("click", function () { 
-        //     Game.gameOver();
-        // }); 
 
         //BEfore the fetch to the backend we need:
-        //1. The username of the user
+        //1. The username of the user *I think i did this 
         //2. we need to find the Game object
-        //3. We need to get the score points
+        //3. We need to get the score points  
+        User.getUsername 
+        this.game 
+        Score.calculateFromAnswer 
 
         // IN THE BACKEND
         // 1. send the info to /users
@@ -104,11 +98,11 @@ class Game {
         //4. create a new score object Score.create(total: , game_id: game.id)
     }  
 
-    displayHighScores() { 
+   static displayHighScores() { 
         const scoreUrl = 'http://localhost:3000/scores/highscores'; 
         
         fetch(scoreUrl) 
-            .then(response => response.text()) 
+            .then(response => response.json()) 
             .then(html => { 
                 document.getElementById("highscores").innerHTML = html;
             })

@@ -21,7 +21,7 @@ div.navbar-list a:hover {
     color: black;
 }
 
-/* Add a color to the active/current link */
+
 div.navbar-list a.active {
     background-color: forestgreen;
     color: white;
@@ -39,25 +39,12 @@ div#game-section {
     background: #f8ffde;
 }
 
-/* div#game-section { 
-    width: 50%; 
-    margin: 5% 30%; 
-    height: 20rem; 
-    background-color:#ddd;
-}  */
-
 div#username-input { 
     width: 60%; 
     margin: 3% 20%; 
     height: 5rem; 
     background-color: #ddd;
 } 
-
-div.input-boxusername textarea { 
-    width: 70%; 
-    height: 30%; 
-    margin: 0 5%; 
-}
 
 
 
