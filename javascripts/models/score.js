@@ -3,16 +3,32 @@
 // constructor recieves the word and calculates final score 
 
 class Score {
-    constructor(wordSubmitted) {
-        this.total = calculateFromAnswer(wordSubmitted)
+    constructor(total) {
+        this.total = total 
     }
 
-    calculateFromAnswer(word) {
-        if (word.length >= 4 ) {
-            return 2
-        } else { 
-            return 1 
-        }
+    static calculateFromAnswer(word) {
+        if  (this.validLetters && this.validateWord(word)){
+            const total = 0
+           if (word.length >= 4 ) {
+                total = 2
+               } else if() { 
+                total = 1 
+            } 
+            new Score(total)
+        } 
     }
-
+    static validateWord(word) { 
+       const url = `https://wordsapiv1.p.mashape.com/words/${word}/definitions`  
+       debugger 
+       fetch(url)
+       .then(response => response.json()) 
+       .then(json => {debugger // if in the response a definition exists than return true if not then else false}) 
+    }) 
+       
+    } 
+    static validLetters() {
+        
+    }
 }   
+

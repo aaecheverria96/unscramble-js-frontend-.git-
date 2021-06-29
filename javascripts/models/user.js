@@ -20,12 +20,12 @@ class User {
       .then(response => response.json()) 
       .then(json => { 
         new User(json.username) 
-        new Game(json.games).forEach(game => {
-          console.log(game)
+        json.games.forEach(game => {
+          new Game(game)
         });
-        new Score(json.scores).forEach(score => {
-          console.log(score)
-        });
+        json.scores.forEach(score => {
+          new Score(score)
+        }); 
         //make a new user passing the username in there new User(json.) 
         //for each game in the json.games create a new game object new Game() 
         //for each score in json.scores create a new score object 
@@ -33,8 +33,8 @@ class User {
       }) 
     }  
     
-    findUserGames(username) { 
-
+    findUserGames(fetchUser) { 
+      fetchUser(scores)
     }
 
     //create a function called find user games 

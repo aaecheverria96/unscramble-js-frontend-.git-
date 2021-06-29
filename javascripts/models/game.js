@@ -71,7 +71,7 @@ class Game {
 
    static gameOver() {  
        let input =  document.getElementById("input-box").value  
-       let scoreObj = new Score(input)
+    //    let scoreObj = new Score(input)
         document.getElementById("input-box").classList.add("hidden")  
         let container = document.getElementById("game-section"); 
         container.innerText = ""
@@ -87,9 +87,7 @@ class Game {
         //1. The username of the user *I think i did this 
         //2. we need to find the Game object
         //3. We need to get the score points  
-        User.getUsername 
-        this.game 
-        Score.calculateFromAnswer 
+        Score.calculateFromAnswer(input)
 
         // IN THE BACKEND
         // 1. send the info to /users
@@ -104,6 +102,7 @@ class Game {
         fetch(scoreUrl) 
             .then(response => response.json()) 
             .then(html => { 
+                debugger 
                 document.getElementById("highscores").innerHTML = html;
             })
        
