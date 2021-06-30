@@ -12,23 +12,42 @@ class Score {
             const total = 0
            if (word.length >= 4 ) {
                 total = 2
-               } else if() { 
+               } else if (word.length < 4) { 
                 total = 1 
             } 
             new Score(total)
         } 
     }
     static validateWord(word) { 
-       const url = `https://wordsapiv1.p.mashape.com/words/${word}/definitions`  
-       debugger 
+       const url = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${word}` 
+       debugger
        fetch(url)
        .then(response => response.json()) 
-       .then(json => {debugger // if in the response a definition exists than return true if not then else false}) 
+       .then(json => { debugger 
     }) 
        
     } 
-    static validLetters() {
+    
+
+    static validateLetters(input) { 
+        const arrayLetters = [
+            ["A", "B", "C", "E"],
+            ["E", "D", "F", "U"],
+            ["N", "O", "J", "G"],
+            ["X", "Y", "U", "A"],
+            ["W", "S", "V", "Q"],
+        ]; 
         
+        let rightLetters = flatten(arrayLetters) 
+
+        if (input.split(" ").forEach(element => {
+            element.includes(rightLetters)
+        })) { 
+
+        } else { 
+            false 
+        }
     }
-}   
+
+}
 

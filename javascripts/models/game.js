@@ -87,7 +87,7 @@ class Game {
         //1. The username of the user *I think i did this 
         //2. we need to find the Game object
         //3. We need to get the score points  
-        Score.calculateFromAnswer(input)
+        Score.calculateFromAnswer //I don't think I need an argument for this 
 
         // IN THE BACKEND
         // 1. send the info to /users
