@@ -45,8 +45,8 @@ class User {
       .then(response => response.json()) 
       .then(json => { 
         //new User(json.username) 
-        json.scores.forEach(score => { 
-          console.log(score)
+        json.games.forEach(game => { 
+          console.log(game.score)
         }); 
         //make a new user passing the username in there new User(json.) 
         //for each game in the json.games create a new game object new Game() 

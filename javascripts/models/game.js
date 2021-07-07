@@ -2,6 +2,7 @@ class Game {
     static startGame() { 
         console.log("STARTING GAME");
         let currentGame = new Game; 
+        this.currentGame = currentGame 
         currentGame.displayGame()  
         console.log(document.getElementById("input-box"))
         document.getElementById("input-box").classList.remove("hidden") 
@@ -88,7 +89,7 @@ class Game {
         //2. we need to find the Game object
         //3. We need to get the score points  
       
-        Score.calculateFromAnswer(input) //I don't think I need an argument for this 
+        Score.calculateFromAnswer(input)
 
         // IN THE BACKEND
         // 1. send the info to /users
@@ -107,7 +108,7 @@ class Game {
             })
        
     } 
-
+    static fetch(username, total)
    
 
 }  

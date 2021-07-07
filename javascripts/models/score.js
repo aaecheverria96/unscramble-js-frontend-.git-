@@ -3,40 +3,56 @@
 // constructor recieves the word and calculates final score 
 
 class Score {
-    constructor(total) {
+    constructor(total, game_id) {
         this.total = total 
+        this.game_id = game_id 
     }
 
     static calculateFromAnswer(input) { 
-      
-        if  (this.validateLetters(input) && this.validateWord(input)){
-            const total = 0
-           if (input.length >= 4 ) {
+      debugger
+      if (input.length === 0) { 
+        const p = document.createElement("p") 
+        p.innerText = "your score is 0"
+        document.getElementById("countdown").insertAdjacentElement("afterbegin", p) 
+        return null 
+      }
+      let total = 0
+      if  (this.validateLetters(input) && this.validateWord(input)){
+      if (input.length >= 4 ) {
                 total = 2
                } else if (input.length < 4) { 
                 total = 1 
-            } else if (input.length === 0) { 
-              total = 0
-            }
-            new Score(total)
+            } 
+            //debugger 
+            const score = new Score(total)  
+            Game.postfetchGame(); 
+            const p = document.createElement("p") 
+        p.innerText = `your score is ${total}`
+        document.getElementById("countdown").insertAdjacentElement("afterbegin", p)
         } 
+        else { 
+          const p = document.createElement("p") 
+        p.innerText = "Invalid input"
+        document.getElementById("countdown").insertAdjacentElement("afterbegin", p) 
+        return null 
+        }
 
     }
-    static validateWord(input) { 
+    static validateWord(input) {  
       const url = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${input}` 
-      fetch(url) 
       
+      fetch(url) 
       .then(response => response.json()) 
-      .then(json => { 
-        debugger 
+      .then(json => {         
         if (json.title === "No Definitions Found") {
           return false 
         } else { 
+          debugger 
           return true 
           
         }
       }) 
-  
+      .catch(error => console.log(error))
        
     }  
     
