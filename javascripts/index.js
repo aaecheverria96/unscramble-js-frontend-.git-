@@ -10,4 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     User.getUsername(); 
 });  
 
-
+document.getElementById("usergames").addEventListener("DOMContentLoaded", function() {
+    User.findUserGames(); 
+});

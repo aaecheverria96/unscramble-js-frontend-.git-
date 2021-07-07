@@ -33,8 +33,26 @@ class User {
       }) 
     }  
     
-    findUserGames(fetchUser) { 
-      fetchUser(scores)
+    static findUserGames(username) { 
+      const newUserUrl = 'http://localhost:3000/users' 
+      fetch(newUserUrl, { 
+       method: 'POST', 
+       headers: { 
+        'Content-Type': 'application/json'
+       },
+      body: JSON.stringify({user: {username}})
+      }) 
+      .then(response => response.json()) 
+      .then(json => { 
+        //new User(json.username) 
+        json.scores.forEach(score => { 
+          console.log(score)
+        }); 
+        //make a new user passing the username in there new User(json.) 
+        //for each game in the json.games create a new game object new Game() 
+        //for each score in json.scores create a new score object 
+         
+      });
     }
 
     //create a function called find user games 
